@@ -14,7 +14,9 @@ def answer() -> int:
 print(answer())
 
 def solver(p: int, q: int) -> int:
-    arr = [i for i in range(p, q + 1)]
+    high = max(p, q)
+    low = min(p, q)
+    arr = [i for i in range(low, high + 1)]
     lcm = 1
 
     for i in arr:
@@ -22,4 +24,4 @@ def solver(p: int, q: int) -> int:
     return lcm
 
 
-print(solver(5, 10))
+print(solver(20, 1))
