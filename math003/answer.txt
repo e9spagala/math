@@ -1,4 +1,1 @@
-Maximum prime factor of 600: 5
-Maximum prime factor of 851: 37
-Maximum prime factor of 475: 19
-Maximum prime factor of 143: 13
+6857
