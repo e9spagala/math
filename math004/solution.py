@@ -8,12 +8,13 @@ def is_palindrome(n: int) -> bool:
 
 def answer() -> int:
     last_palindrome: int = -1
+
     for i in range(100, 1000):
         for j in range(100, 1000):
             prod = i * j
             if is_palindrome(prod):
                 last_palindrome = max(last_palindrome, prod)
-                print(last_palindrome)
+
     return last_palindrome
 
 print(answer())
@@ -24,14 +25,14 @@ def solver(n: int, p: int, q: int) -> Union[int, None]:
     
     low: int = 10**(n-1)
     high: int = low* 10
-
     last_palindrome = -1
+
     for i in range(low, high):
         for j in range(low, high):
             prod = i * j
-            if prod >= p and prod <= q and is_palindrome(prod):
-                last_palindrome = max(last_palindrome, prod)
+            if  prod > p and prod < q and is_palindrome(prod):
+                    last_palindrome = max(last_palindrome, prod)
 
     return last_palindrome
 
-print(solver(3, 1000, 1000000 ))
+print(solver(4, 1000, 100000000 ))
