@@ -1,0 +1,3 @@
+ 10,001st prime number: 104743
+
+ 1 millionth prime number: 15485863 took arround 5 minutes to run :)
