@@ -1,7 +1,7 @@
 
-def n_sum_squared(n: int) -> int:
+def n_sum(n: int) -> int:
      sum = n * (n + 1) // 2
-     return sum*sum
+     return sum
 
 def square_sum(n: int) -> int:
     return (n* (n + 1) * (2*n + 1)) // 6
@@ -9,7 +9,9 @@ def square_sum(n: int) -> int:
 
 def answer(n=100) -> int:
     
-    return  n_sum_squared(n) - square_sum(n)
+    sum_squared =  (n_sum(n))**2
+
+    return sum_squared - square_sum(n)
 
 print(answer())
 
@@ -28,8 +30,13 @@ but I am going to solve it thorugh approach
 '''
 def solver(p: int, q:int) -> int:
 
-    acutal_sum = n_sum_squared(q) - n_sum_squared(p)
-    acutal_sum_squared = square_sum(q) - square_sum(p)
-    return acutal_sum - acutal_sum_squared
+    sum_squared = (n_sum(q) - n_sum(p - 1))**2
 
-print(solver(20, 100))
+    squared_sum = square_sum(q) - square_sum(p - 1)
+    # print(n_sum(q), n_sum(p), sum_squared, squared_sum)
+    return sum_squared - squared_sum
+
+print(solver(1, 100))
+
+
+
